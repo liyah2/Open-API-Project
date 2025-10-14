@@ -1,3 +1,219 @@
-h1 {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+
+/* Secondary Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Colors */
+/* #194274 - BLUE
+#DD1C1A - RED
+#EDAE49 - YELLOW
+#FFFCD2 - CREAM*/
+
+
+
+/* MOBILE FIRST */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+/* ========Nav Bar========= */
+
+.banner {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70px;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    position: absolute;
+    width: 80%;
+    margin: 0 0;
+    padding: 2.5rem 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: #DD1C1A ;
+}
+
+
+.logo{
+    width: 6.8rem;
+}
+
+/*=========== Background ===============*/
+
+.background {
+    height: 600px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    
+  }
+  
+  .background h1,
+  .background form {
+    position: relative;
+    z-index: 1;
+    font-family: "Ultra", serif;
+    font-size: 75px;
+    color:#EDAE49;
+    margin: -5px;
+  }
+
+  #artwork-search {
+    width: 380px;
+    background-color: #FFFCD2;
+    text-align: center;
+  }
+
+  #artwork-search::placeholder {
+    color: #194274;
+  }
+
+  .button {
+    padding: 4px;
+    display: block;
+    margin: 5px auto 0;      
+    padding: 2px 20px;      
+    background-color: #DD1C1A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  /* ===========Gallery section============= */
+
+  .gallery h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #DD1C1A; 
+  }
+
+.gallery {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .gallery h1 {
+    font-family: "Ultra", serif;
+    font-size: 2.5rem;
+    color: #194274;
+    margin-bottom: 2rem;
+  }
+  
+  #artworkSection {
+    column-count: 3;          
+    column-gap: 1.5rem;       
+  }
+  
+  
+/* =============== Artwork gallery cards =================== */
+  #artworkSection div {
+    display: inline-block;
+    background: white;
+    margin: 0 0 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* transition: transform 0.3s ease; */
+    width: 100%;
+  }
+  
+  #artworkSection div:hover {
+    transform: translateY(5px);
+  }
+  
+ 
+  #artworkSection img {
+    width: 100%;
+    display: block;
+  }
+  
+  
+  #artworkSection h3 {
+    margin: 0.5rem;
+    font-family: "Raleway", sans-serif;
+    color: #194274;
+  }
+  
+  #artworkSection p {
+    margin: 0 0 1rem;
+    color: #DD1C1A;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9rem;
+  }
+  
+
+
+ /* ===========Footer section============= */
+  footer {
+    text-align: center;
+    background-color: #DD1C1A;
+    color: white;
+    padding: 1rem 0; 
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+
+
+
+
+
+ /* =================== Media Query ============= */
+ @media (max-width: 600px) {
+    #artworkSection {
+      column-count: 1;
+    }
+  }
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+ @media (max-width: 900px) {
+    #artworkSection {
+      column-count: 2;
+    }
+  }
+  
+

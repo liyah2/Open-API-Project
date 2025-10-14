@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
     <title>Open API Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<!-- ==============Body Section============== -->
-<body>
-    <h1>ARTIC Gallery</h1>
+  <!-- ==============Navigation Section============== -->
+  <body>
+    <section class="banner">
+      <div class="navbar">
+        <a href="#"
+          ><img
+            src="./Images/Find HeART1.png"
+            class="logo"
+            alt="find heART logo"
+        /></a>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </section>
 
-<!-- ==============Artwork Section============== -->
-  
-    <div id="artwork"></div>
+    <!-- ========== Search & Background Section ======= -->
+    <section class="background">
+      <h1>Find HeART</h1>
+      <form id="search-form">
+        <label for="artwork-search"></label>
+        <input
+          type="search"
+          id="artwork-search"
+          name="q"
+          placeholder="Search Artwork"
+        />
+        <button class="button" type="submit">Search</button>
+      </form>
+    </section>
+
+    <!-- ==============Artwork Section============== -->
+    <section class="gallery">
+      <h1>Gallery</h1>
+      <div id="artworkSection"></div>
+    </section>
 
     <script src="index.js"></script>
-</body>
+    
+  </body>
 </html>
+
+
