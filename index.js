@@ -1,9 +1,18 @@
 async function getArtData() {
   try {
+    const input = document.getElementById("artwork-search");
+    const searchTerm = input.value.trim();
+
+    // condition for if it is searched.
+    let apiUrl = "https://api.artic.edu/api/v1/artworks";
+    if (searchTerm) {
+      apiUrl = `https://api.artic.edu/api/v1/artworks/search?q=${encodeURIComponent(
+        searchTerm
+      )}&query[term][is_public_domain]=true&fields=artist_title,date_display,image_id,thumbnail,title`;
+    }
+
     //Grab Info from web
-    const response = await fetch(
-      "https://api.artic.edu/api/v1/artworks"
-    );
+    const response = await fetch(apiUrl);
     const data = await response.json();
 
     // Grab images - but do not "hardcode" -- there are multiple sections to this - Grabs base
@@ -12,28 +21,28 @@ async function getArtData() {
     //need to add the content to the page now.
     const artworkSection = document.getElementById("artworkSection");
     artworkSection.innerHTML = "";
-    
 
     //Need to grab the ID for each as the identifier - combine with base and end point - this gets all info needed for each artwork
     data.data.forEach((artworkInfo) => {
-    //   const apiImageUrl = `${apiBaseImgUrl}/${artworkInfo.image_id}/full/843,/0/default.jpg`;
+      //   const apiImageUrl = `${apiBaseImgUrl}/${artworkInfo.image_id}/full/843,/0/default.jpg`;
 
-
-    // adding if statement for missing images in API
-    let apiImageUrl;
-    if (artworkInfo.image_id) {
+      // adding if statement for missing images in API
+      let apiImageUrl;
+      if (artworkInfo.image_id) {
         apiImageUrl = `${apiBaseImgUrl}/${artworkInfo.image_id}/full/843,/0/default.jpg`;
-    } else {
-        apiImageUrl="./Images/—Pngtree—no image vector illustration isolated_4979075.png"
-    }
+      } else {
+        apiImageUrl =
+          "./Images/—Pngtree—no image vector illustration isolated_4979075.png";
+      }
 
-    // print info to document -- using innerText made the h3 and p tag show, changing it allowed it to work properly
+      // print info to document -- using innerText made the h3 and p tag show, changing it allowed it to work properly
       const artworkDiv = document.createElement("div");
-      artworkDiv.innerHTML = `<h3>${artworkInfo.title};</h3> <p>${artworkInfo.artist_title || "Unknown Artist"}</p>`
+      artworkDiv.innerHTML = `<h3>${artworkInfo.title};</h3> <p>${
+        artworkInfo.artist_title || "Unknown Artist"
+      }</p>`;
 
       //missing image
-      
-      
+
       const img = document.createElement("img");
       img.src = apiImageUrl;
       img.alt = artworkInfo.title;
@@ -44,7 +53,7 @@ async function getArtData() {
 
       artworkSection.appendChild(artworkDiv);
       artworkDiv.appendChild(img);
-      
+
       //Console to see if info generates.
       console.log(`
         ${apiImageUrl}
@@ -59,45 +68,49 @@ async function getArtData() {
 
 getArtData();
 
+// Handle search form submission
+document.getElementById("search-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  getArtData();
+});
+
 // ========Background ==========
 
 async function setHeaderBackground() {
-    try {
-      const artworkId = 151535; // specific artwork for background
-      const response = await fetch(`https://api.artic.edu/api/v1/artworks/${artworkId}`);
-      const data = await response.json();
-  
-      const apiBaseImgUrl = data.config.iiif_url;
-      const artwork = data.data;
-  
-      const backgroundSection = document.querySelector(".background");
-      if (artwork.image_id) {
-        const backgroundImageUrl = `${apiBaseImgUrl}/${artwork.image_id}/full/843,/0/default.jpg`;
-        backgroundSection.style.backgroundImage = `url(${backgroundImageUrl})`;
+  try {
+    const artworkId = 151535; // specific artwork for background
+    const response = await fetch(
+      `https://api.artic.edu/api/v1/artworks/${artworkId}`
+    );
+    const data = await response.json();
 
-      }
-    } catch (error) {
-      console.error("Error retrieving background: ", error);
+    const apiBaseImgUrl = data.config.iiif_url;
+    const artwork = data.data;
+
+    const backgroundSection = document.querySelector(".background");
+    if (artwork.image_id) {
+      const backgroundImageUrl = `${apiBaseImgUrl}/${artwork.image_id}/full/843,/0/default.jpg`;
+      backgroundSection.style.backgroundImage = `url(${backgroundImageUrl})`;
     }
+  } catch (error) {
+    console.error("Error retrieving background: ", error);
   }
-  
-  setHeaderBackground();
+}
 
+setHeaderBackground();
 
+// =========Copyright section=============
 
- // =========Copyright section=============
+const body = document.body;
 
- const body = document.body;
+let footer = document.createElement("footer");
+body.appendChild(footer);
 
- let footer = document.createElement("footer");
- body.appendChild(footer);
- 
- const today = new Date();
- const thisYear = today.getFullYear();
- 
- const copyright = document.createElement("p");
- 
- copyright.innerHTML = `\u00A9 Aaliyah Closs ${thisYear}`;
- 
- footer.appendChild(copyright);
-  
+const today = new Date();
+const thisYear = today.getFullYear();
+
+const copyright = document.createElement("p");
+
+copyright.innerHTML = `\u00A9 Aaliyah Closs ${thisYear}`;
+
+footer.appendChild(copyright);

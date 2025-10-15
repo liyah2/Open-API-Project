@@ -19,6 +19,7 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: transparent;
+    font-family: "Raleway", sans-serif;
   }
 
 /* ========Nav Bar========= */
@@ -53,6 +54,10 @@ body, html {
 .navbar ul a {
     text-decoration: none;
     color: #DD1C1A ;
+}
+
+li{ 
+    color: #DD1C1A;
 }
 
 
@@ -134,6 +139,11 @@ body, html {
   #artworkSection {
     column-count: 3;          
     column-gap: 1.5rem;       
+  }
+
+  p{
+    color: #EDAE49;
+    padding-bottom: 50px;
   }
   
   
