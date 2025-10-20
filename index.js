@@ -1,3 +1,4 @@
+//Mobile First
 async function getArtData() {
   try {
     const input = document.getElementById("artwork-search");
@@ -48,11 +49,11 @@ async function getArtData() {
       img.alt = artworkInfo.title;
 
       img.onerror = () => {
-        img.src = "./Images/placeholder.jpg";
+        img.src = "./Images/—Pngtree—no image vector illustration isolated_4979075.png";
       };
 
-      artworkSection.appendChild(artworkDiv);
       artworkDiv.appendChild(img);
+      artworkSection.appendChild(artworkDiv);
 
       //Console to see if info generates.
       console.log(`
@@ -114,3 +115,6 @@ const copyright = document.createElement("p");
 copyright.innerHTML = `\u00A9 Aaliyah Closs ${thisYear}`;
 
 footer.appendChild(copyright);
+
+
+

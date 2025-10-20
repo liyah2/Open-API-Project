@@ -137,7 +137,7 @@ li{
   }
   
   #artworkSection {
-    column-count: 3;          
+    column-count: 2;          
     column-gap: 1.5rem;       
   }
 
@@ -204,26 +204,84 @@ li{
 
  /* =================== Media Query ============= */
  @media (max-width: 600px) {
-    #artworkSection {
-      column-count: 1;
-    }
-  }
- 
- 
-
-
-
-
-
-
-
-
-
- 
- @media (max-width: 900px) {
-    #artworkSection {
+    /* #artworkSection {
       column-count: 2;
+    } */
+
+    .background h1 {
+        font-size: 70px;
     }
+
+    .gallery p {
+        font-size: 15px;
+    }
+
+
   }
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+ @media (min-width: 900px) {
+
+
+    #artworkSection {
+      column-count: 3;
+    }
+
+    .background {
+        height: 800px;
+    }
+
+    .gallery h1 {
+        font-size: 70px;
+
+    }
+
+    .background h1 {
+        font-size: 120px;
+    }
+
+    .gallery p {
+        font-size: 20px;
+    }
+
+    #artworkSection p {
+        font-size: 18px;
+      }
+
+      #artworkSection h3 {
+        font-size: 23px;
+      }
+
+      #artwork-search {
+        width: 600px;
+        padding: 6px;
+      }
+  }
+
+
+
+
+
+
+
+
+  /* @media (max-width: 1200px) {
+    #artworkSection {
+      column-count: 3;
+    }
+  } */
+
+
+
   
 
