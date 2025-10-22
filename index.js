@@ -49,7 +49,7 @@ async function getArtData() {
       img.alt = artworkInfo.title;
 
       img.onerror = () => {
-        img.src = "./Images/—Pngtree—no image vector illustration isolated_4979075.png";
+        img.src = "./Images/noimage.png";
       };
 
       artworkDiv.appendChild(img);

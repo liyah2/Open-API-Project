@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Open API Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open API Project</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <!-- ==============Navigation Section============== -->
@@ -13,13 +13,13 @@
       <div class="navbar">
         <a href="#"
           ><img
-            src="./Images/Find HeART1.png"
-            class="logo"
+            src="./Images/findheart.png"
+            id="logo"
             alt="find heART logo"
         /></a>
         <ul>
           <li><a href="#gallery">Gallery</a></li>
-          <li>Open API project</li>
+          <li id="open-api">Open API project</li>
         </ul>
       </div>
     </section>
@@ -40,7 +40,7 @@
     </section>
 
     <!-- ==============Artwork Section============== -->
-    <section class="gallery">
+    <section id="gallery">
       <h1>Gallery</h1>
       <p>This project uses the Art Institute of Chicago’s public API to search and display artworks based on user input. It fetches artwork data such as titles, artists, and images, dynamically rendering results in the browser. The API integration demonstrates how to work with asynchronous JavaScript, handle missing data gracefully, and present visually engaging content through real-world API data.</p>
       <div id="artworkSection"></div>

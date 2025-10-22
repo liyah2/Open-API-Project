@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap");
 
 /* Secondary Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Colors */
 /* #194274 - BLUE
@@ -11,16 +11,15 @@
 #EDAE49 - YELLOW
 #FFFCD2 - CREAM*/
 
-
-
 /* MOBILE FIRST */
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     background-color: transparent;
     font-family: "Raleway", sans-serif;
-  }
+}
 
 /* ========Nav Bar========= */
 
@@ -53,15 +52,22 @@ body, html {
 
 .navbar ul a {
     text-decoration: none;
-    color: #DD1C1A ;
+    color: #dd1c1a;
 }
 
-li{ 
-    color: #DD1C1A;
+li {
+    color: #dd1c1a;
+    font-weight: 700;
+    font-size: 18px;
 }
 
+#open-api {
+    color: black;
+    font-weight: 400;
+    font-size: 15px;
+}
 
-.logo{
+#logo {
     width: 6.8rem;
 }
 
@@ -79,76 +85,76 @@ li{
     background-repeat: no-repeat;
     position: relative;
     z-index: 0;
-    
-  }
-  
-  .background h1,
-  .background form {
+    width: 100vw;
+    overflow: visible;
+}
+
+.background h1,
+.background form {
     position: relative;
     z-index: 1;
     font-family: "Ultra", serif;
     font-size: 75px;
-    color:#EDAE49;
-    margin: -5px;
-  }
+    color: #edae49;
+    margin: -5px 0;
+}
 
-  #artwork-search {
+#artwork-search {
     width: 380px;
-    background-color: #FFFCD2;
+    background-color: #fffcd2;
     text-align: center;
-  }
+}
 
-  #artwork-search::placeholder {
+#artwork-search::placeholder {
     color: #194274;
-  }
+}
 
-  .button {
+.button {
     padding: 4px;
     display: block;
-    margin: 5px auto 0;      
-    padding: 2px 20px;      
-    background-color: #DD1C1A;
+    margin: 5px auto 0;
+    padding: 2px 20px;
+    background-color: #dd1c1a;
     color: white;
     border: none;
     border-radius: 8px;
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
     cursor: pointer;
-  }
+}
 
-  /* ===========Gallery section============= */
+/* ===========Gallery section============= */
 
-  .gallery h1 {
+#gallery h1 {
     font-size: 50px;
     text-align: center;
-    color: #DD1C1A; 
-  }
+    color: #dd1c1a;
+}
 
-.gallery {
+#gallery {
     padding: 3rem 1rem;
     text-align: center;
-  }
-  
-  .gallery h1 {
+}
+
+#gallery h1 {
     font-family: "Ultra", serif;
     font-size: 2.5rem;
     color: #194274;
     margin-bottom: 2rem;
-  }
-  
-  #artworkSection {
-    column-count: 2;          
-    column-gap: 1.5rem;       
-  }
+}
 
-  p{
-    color: #EDAE49;
+#artworkSection {
+    column-count: 2;
+    column-gap: 1.5rem;
+}
+
+p {
+    color: #edae49;
     padding-bottom: 50px;
-  }
-  
-  
+}
+
 /* =============== Artwork gallery cards =================== */
-  #artworkSection div {
+#artworkSection div {
     display: inline-block;
     background: white;
     margin: 0 0 1.5rem;
@@ -157,53 +163,65 @@ li{
     overflow: hidden;
     /* transition: transform 0.3s ease; */
     width: 100%;
-  }
-  
-  #artworkSection div:hover {
+}
+
+#artworkSection div:hover {
     transform: translateY(5px);
-  }
-  
- 
-  #artworkSection img {
+}
+
+#artworkSection img {
     width: 100%;
     display: block;
-  }
-  
-  
-  #artworkSection h3 {
+}
+
+#artworkSection h3 {
     margin: 0.5rem;
     font-family: "Raleway", sans-serif;
     color: #194274;
-  }
-  
-  #artworkSection p {
+}
+
+#artworkSection p {
     margin: 0 0 1rem;
-    color: #DD1C1A;
+    color: #dd1c1a;
     font-family: "Raleway", sans-serif;
     font-size: 0.9rem;
-  }
-  
+}
 
-
- /* ===========Footer section============= */
-  footer {
+/* ===========Footer section============= */
+footer {
     text-align: center;
-    background-color: #DD1C1A;
+    background-color: #dd1c1a;
     color: white;
-    padding: 1rem 0; 
-  }
-  
-  footer p {
+    padding: 1rem 0;
+}
+
+footer p {
     margin: 0;
-  }
-  
+}
 
+/* =================== Media Query 545px============= */
 
+@media (max-width: 545px) {
+    li {
+        font-size: 15px;
+    }
 
+    #open-api {
+        font-size: 12px;
+    }
 
+    #artwork-search {
+        width: 80vw;
+        height: 35px;
+    }
 
- /* =================== Media Query ============= */
- @media (max-width: 600px) {
+    .button {
+        padding: 10px 20px;
+    }
+}
+
+/* =================== Media Query 600px============= */
+@media (max-width: 600px) {
     /* #artworkSection {
       column-count: 2;
     } */
@@ -212,76 +230,76 @@ li{
         font-size: 70px;
     }
 
-    .gallery p {
+    #gallery p {
         font-size: 15px;
     }
 
+    li {
+        font-size: 15px;
+    }
 
-  }
- 
- 
+    #open-api {
+        font-size: 12px;
+    }
 
+    #artwork-search {
+        width: 80vw;
+        height: 35px;
+    }
 
+    .button {
+        padding: 10px 20px;
+    }
+}
 
+/* =================== Media Query 900px============= */
 
-
-
-
-
-
- 
- @media (min-width: 900px) {
-
-
+@media (min-width: 900px) {
     #artworkSection {
-      column-count: 3;
+        column-count: 3;
     }
 
     .background {
         height: 800px;
     }
 
-    .gallery h1 {
+    #gallery h1 {
         font-size: 70px;
-
     }
 
     .background h1 {
         font-size: 120px;
     }
 
-    .gallery p {
+    #gallery p {
         font-size: 20px;
     }
 
     #artworkSection p {
         font-size: 18px;
-      }
+    }
 
-      #artworkSection h3 {
+    #artworkSection h3 {
         font-size: 23px;
-      }
+    }
 
-      #artwork-search {
+    #artwork-search {
         width: 600px;
         padding: 6px;
-      }
-  }
+    }
 
+    #artwork-search {
+        width: 90vw;
+        height: 35px;
+    }
 
+    .button {
+        padding: 10px 20px;
+    }
+}
 
-
-
-
-
-
-  /* @media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     #artworkSection {
       column-count: 3;
     }
   } */
-
-
-
-  
-
